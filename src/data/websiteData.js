@@ -7,6 +7,15 @@ export const navLinks = [
   { label: 'Contact', href: '#contact' },
 ];
 
+export const trustMarquee = [
+  'RERA Received',
+  'Bang on Dwarka Expressway',
+  'NHAI-Approved Direct Access',
+  'Freehold Ownership',
+  '15 Min to IGI Airport',
+  'Basement + Ground + 4 Floors',
+];
+
 export const heroBadges = [
   { text: 'RERA Received', isGold: true },
   { text: 'Bang on Dwarka Expressway', isGold: false },

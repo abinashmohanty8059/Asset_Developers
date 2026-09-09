@@ -11,9 +11,13 @@ export default function Connectivity() {
           </div>
           <h2>Everything Gurugram matters for, minutes away</h2>
         </div>
-        <div className="conn-grid reveal">
+        <div className="conn-grid">
           {connectivityCards.map((card, idx) => (
-            <div className="conn-card" key={idx}>
+            <div
+              className="conn-card reveal"
+              key={idx}
+              style={{ transitionDelay: `${(idx % 3) * 0.1}s` }}
+            >
               <div className="img">
                 <img src={card.image} alt={card.alt} loading="lazy" />
               </div>

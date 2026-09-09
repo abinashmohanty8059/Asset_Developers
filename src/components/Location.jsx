@@ -1,5 +1,6 @@
 import React from 'react';
 import { locationStats, locationBenefits } from '../data/websiteData';
+import AnimatedNumber from './AnimatedNumber';
 
 export default function Location() {
   return (
@@ -22,7 +23,7 @@ export default function Location() {
             {locationStats.map((stat, idx) => (
               <div className="stat" key={idx}>
                 <div>
-                  <h4>{stat.value}</h4>
+                  <h4><AnimatedNumber value={stat.value} /></h4>
                   <p>{stat.label}</p>
                 </div>
               </div>
@@ -30,9 +31,13 @@ export default function Location() {
           </div>
         </div>
 
-        <div className="benefits reveal">
+        <div className="benefits">
           {locationBenefits.map((benefit, idx) => (
-            <div className="b" key={idx}>
+            <div
+              className="b reveal"
+              key={idx}
+              style={{ transitionDelay: `${idx * 0.08}s` }}
+            >
               <h4>{benefit.title}</h4>
               <p>{benefit.desc}</p>
             </div>

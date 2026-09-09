@@ -1,7 +1,10 @@
 import React from 'react';
 import useScrollReveal from './hooks/useScrollReveal';
+import Preloader from './components/Preloader';
+import ScrollProgress from './components/ScrollProgress';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import TrustMarquee from './components/TrustMarquee';
 import Intro from './components/Intro';
 import SCOSection from './components/SCOSection';
 import WhySCO from './components/WhySCO';
@@ -18,6 +21,8 @@ import WealthCreation from './components/WealthCreation';
 import SiteProgress from './components/SiteProgress';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import FloatingContact from './components/FloatingContact';
+import BackToTop from './components/BackToTop';
 
 export default function App() {
   // Activate scroll reveal observer
@@ -25,9 +30,12 @@ export default function App() {
 
   return (
     <>
+      <Preloader />
+      <ScrollProgress />
       <Navbar />
       <main>
         <Hero />
+        <TrustMarquee />
         <div id="overview">
           <Intro />
           <SCOSection />
@@ -47,6 +55,8 @@ export default function App() {
         <Contact />
       </main>
       <Footer />
+      <FloatingContact />
+      <BackToTop />
     </>
   );
 }

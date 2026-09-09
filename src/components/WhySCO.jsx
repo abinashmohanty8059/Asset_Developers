@@ -22,7 +22,11 @@ export default function WhySCO() {
           </div>
           <ul>
             {whySCOBenefits.map((benefit, idx) => (
-              <li key={idx}>
+              <li
+                className="reveal"
+                key={idx}
+                style={{ transitionDelay: `${(idx % 5) * 0.06}s` }}
+              >
                 <span className="n">—</span> {benefit}
               </li>
             ))}

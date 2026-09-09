@@ -11,7 +11,11 @@ export default function Amenities() {
         <h2>An SCO built for a new age</h2>
         <div className="amenity-grid">
           {amenitiesList.map((amenity, idx) => (
-            <div className="a" key={idx}>
+            <div
+              className="a reveal"
+              key={idx}
+              style={{ transitionDelay: `${(idx % 4) * 0.08}s` }}
+            >
               <p>{amenity}</p>
             </div>
           ))}

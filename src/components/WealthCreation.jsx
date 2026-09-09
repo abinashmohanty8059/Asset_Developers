@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { wealthStats, wealthBarsData } from '../data/websiteData';
+import AnimatedNumber from './AnimatedNumber';
 
 export default function WealthCreation() {
   const [animated, setAnimated] = useState(false);
@@ -53,8 +54,12 @@ export default function WealthCreation() {
             </p>
             <div className="wealth-stats">
               {wealthStats.map((stat, idx) => (
-                <div className="w" key={idx}>
-                  <div className="num">{stat.num}</div>
+                <div
+                  className="w reveal"
+                  key={idx}
+                  style={{ transitionDelay: `${idx * 0.1}s` }}
+                >
+                  <div className="num"><AnimatedNumber value={stat.num} /></div>
                   <div className="lab">{stat.lab}</div>
                 </div>
               ))}

@@ -1,5 +1,6 @@
 import React from 'react';
 import { floorBreakdown } from '../data/websiteData';
+import AnimatedNumber from './AnimatedNumber';
 
 export default function FloorBreakdown() {
   return (
@@ -21,10 +22,13 @@ export default function FloorBreakdown() {
               {floorBreakdown.map((row, idx) => (
                 <div
                   key={idx}
-                  className={`floor-row ${row.isTotal ? 'total' : ''}`.trim()}
+                  className={`floor-row reveal ${row.isTotal ? 'total' : ''}`.trim()}
+                  style={{ transitionDelay: `${idx * 0.05}s` }}
                 >
                   <span className="l">{row.label}</span>
-                  <span className="v">{row.value}</span>
+                  <span className="v">
+                    {row.isTotal ? <AnimatedNumber value={row.value} /> : row.value}
+                  </span>
                 </div>
               ))}
             </div>

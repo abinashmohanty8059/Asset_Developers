@@ -12,7 +12,11 @@ export default function NewAgeFeatures() {
         </div>
         <div className="feat-grid">
           {newAgeFeatures.map((feat, idx) => (
-            <div className="feat" key={idx}>
+            <div
+              className="feat reveal"
+              key={idx}
+              style={{ transitionDelay: `${idx * 0.1}s` }}
+            >
               <img src={feat.image} alt={feat.alt} loading="lazy" />
               <div className="t">
                 <h4>{feat.title}</h4>

@@ -5,6 +5,7 @@ import './styles/global.css';
 import './styles/navbar.css';
 import './styles/hero.css';
 import './styles/sections.css';
+import './styles/dynamic.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
