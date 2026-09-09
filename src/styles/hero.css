@@ -1,0 +1,121 @@
+/* ---------- Hero ---------- */
+#hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: var(--navy-deep);
+  overflow: hidden;
+}
+
+#hero .bg {
+  position: absolute;
+  inset: 0;
+  background: url('/images/hero-skyline-sunset.jpg') center right / cover no-repeat;
+  opacity: 0.9;
+}
+
+#hero .bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    var(--navy-deep) 5%,
+    rgba(10, 22, 38, 0.75) 42%,
+    rgba(10, 22, 38, 0.15) 75%
+  );
+}
+
+#hero .content {
+  position: relative;
+  z-index: 2;
+  padding-top: 120px;
+  padding-bottom: 60px;
+}
+
+#hero .kicker {
+  color: var(--gold-soft);
+  font-size: 14px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 22px;
+  font-weight: 500;
+}
+
+#hero h1 {
+  color: #f8f6f1;
+  font-size: clamp(40px, 6vw, 74px);
+  line-height: 1.06;
+  font-weight: 400;
+  max-width: 820px;
+}
+
+#hero h1 em {
+  font-style: italic;
+  color: var(--gold-soft);
+  font-weight: 400;
+}
+
+#hero .sub {
+  color: #c7cddc;
+  font-size: 17px;
+  max-width: 520px;
+  margin-top: 26px;
+  line-height: 1.6;
+  font-family: 'Inter', sans-serif;
+}
+
+#hero .badges {
+  display: flex;
+  gap: 14px;
+  margin-top: 38px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+#hero .badge {
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #f1eee6;
+  padding: 9px 18px;
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  border-radius: 2px;
+}
+
+#hero .badge.gold {
+  background: var(--gold);
+  color: #1a1406;
+  border-color: var(--gold);
+  font-weight: 600;
+}
+
+#hero .scroll-cue {
+  position: absolute;
+  bottom: 34px;
+  left: 32px;
+  z-index: 2;
+  color: #cfd6e2;
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#hero .scroll-cue .line {
+  width: 1px;
+  height: 34px;
+  background: linear-gradient(#c9a24b, transparent);
+  animation: pulse 2.2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+}
