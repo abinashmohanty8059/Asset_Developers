@@ -4,18 +4,25 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
-// A giant headline whose letterforms are a clipping mask — the skyline photo
+// A giant headline whose letterforms are a clipping mask — a looping video
 // only shows through the glyph shapes. The layout is measured from a hidden
 // text layer so the SVG <text> clip-path glyphs line up with the visible
 // (invisible) heading exactly, then a slow mouse-parallax drift plays inside
 // the clipped area.
 const WORDS = ['Built', 'for', 'the', 'Future'];
 
+const VIDEO_SRC =
+  'https://ik.imagekit.io/tm5te9cjl/ff/Aerial%20view%20of%20sand%20beach.%20Top%20view%20sea%20waves.%20Drone%20footage%20-%20Nature%20video,%20HD%20-%204K%20(720p,%20h264).mp4?updatedAt=1788042662542';
+
 export default function BuiltForFuture() {
   const containerRef = useRef(null);
   const rootRef = useRef(null);
   const measureRef = useRef(null);
   const mediaRef = useRef(null);
+  const videoRef = useRef(null);
+  const prefersReducedMotionRef = useRef(
+    typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  );
 
   useEffect(() => {
     const root = rootRef.current;
@@ -196,11 +203,16 @@ export default function BuiltForFuture() {
 
         <span className="masked-heading__reveal">
           <span className="masked-heading__clip" style={{ clipPath: 'url(#bffClip)' }}>
-            <span ref={mediaRef} className="masked-heading__media">
-              <img
+            <span ref={mediaRef} className="masked-heading__media" aria-hidden="true">
+              <video
+                ref={videoRef}
                 className="masked-heading__source"
-                src="/images/hero-skyline-sunset.jpg"
-                alt="India World Mart skyline at golden hour"
+                src={VIDEO_SRC}
+                autoPlay={!prefersReducedMotionRef.current}
+                loop={!prefersReducedMotionRef.current}
+                muted
+                playsInline
+                preload="metadata"
               />
             </span>
           </span>
