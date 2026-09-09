@@ -25,6 +25,7 @@ import FloatingContact from './components/FloatingContact';
 import BackToTop from './components/BackToTop';
 import ImageMorphGallery from './components/ImageMorphGallery';
 import SkylineScrollReveal from './components/SkylineScrollReveal';
+import BuiltForFuture from './components/BuiltForFuture';
 
 export default function App() {
   // Activate scroll reveal observer
@@ -56,6 +57,7 @@ export default function App() {
         <NewAgeFeatures />
         <WealthCreation />
         <SiteProgress />
+        <BuiltForFuture />
         <Contact />
       </main>
       <Footer />

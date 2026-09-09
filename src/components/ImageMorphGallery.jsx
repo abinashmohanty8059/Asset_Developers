@@ -56,11 +56,15 @@ export default function ImageMorphGallery() {
       return { w: rect.width || window.innerWidth, h: rect.height || window.innerHeight };
     };
 
-    // Sized to actually fill most of the visual column's height, rather than
-    // leaving a small medallion floating in a lot of empty space.
+    // Sized to fill a good share of the visual column, but capped so the
+    // ring's own cards (measured, since their height is responsive) never
+    // clip against the column's overflow: hidden edges, top or bottom.
     const getRadius = () => {
       const { w, h } = getVisualSize();
-      return Math.min(360, w * 0.42, h * 0.42);
+      const sampleCard = cardsWrap.querySelector('.morph-card-wrap');
+      const cardH = sampleCard ? sampleCard.getBoundingClientRect().height : 150;
+      const maxByHeight = h / 2 - cardH / 2 - 16;
+      return Math.max(110, Math.min(260, w * 0.3, maxByHeight));
     };
 
     const ctx = gsap.context(() => {
@@ -88,7 +92,7 @@ export default function ImageMorphGallery() {
         cards,
         {
           x: (i) => {
-            const spacing = getVisualSize().w < 420 ? 15 : 28;
+            const spacing = getVisualSize().w < 420 ? 13 : 24;
             return (i - (TOTAL_CARDS - 1) / 2) * spacing;
           },
           y: 0,
