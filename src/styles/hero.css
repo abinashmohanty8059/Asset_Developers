@@ -11,9 +11,29 @@
 #hero .bg {
   position: absolute;
   inset: -6% 0 0 0;
+  overflow: hidden;
+  will-change: transform;
+}
+
+#hero .bg-image {
+  position: absolute;
+  inset: 0;
   background: url('/images/hero-skyline-sunset.jpg') center right / cover no-repeat;
   opacity: 0.9;
-  will-change: transform;
+  transform-origin: 70% 40%;
+}
+
+/* Slow idle zoom gives the still photograph a video-like, "always alive"
+   ambiance until the visitor starts scrolling and the parallax takes over. */
+@media (prefers-reduced-motion: no-preference) {
+  #hero .bg-image {
+    animation: heroKenBurns 22s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes heroKenBurns {
+  from { transform: scale(1); }
+  to { transform: scale(1.09); }
 }
 
 #hero .glow {

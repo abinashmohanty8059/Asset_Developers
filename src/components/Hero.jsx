@@ -17,7 +17,7 @@ export default function Hero() {
       requestAnimationFrame(() => {
         const bg = bgRef.current;
         if (bg) {
-          bg.style.transform = `translateY(${window.scrollY * 0.18}px) scale(1.08)`;
+          bg.style.transform = `translateY(${window.scrollY * 0.18}px)`;
         }
         ticking = false;
       });
@@ -44,7 +44,9 @@ export default function Hero() {
   return (
     <header id="hero" ref={heroRef}>
       <div className="glow" aria-hidden="true" />
-      <div className="bg" ref={bgRef} aria-hidden="true" />
+      <div className="bg" ref={bgRef} aria-hidden="true">
+        <div className="bg-image" />
+      </div>
       <div className="wrap content">
         <div className="kicker">Asset Developers · Sector 88A, Gurugram NCR</div>
         <h1>

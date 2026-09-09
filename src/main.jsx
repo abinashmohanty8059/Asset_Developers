@@ -6,6 +6,7 @@ import './styles/navbar.css';
 import './styles/hero.css';
 import './styles/sections.css';
 import './styles/dynamic.css';
+import './styles/showcase.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

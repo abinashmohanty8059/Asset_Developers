@@ -23,6 +23,8 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import FloatingContact from './components/FloatingContact';
 import BackToTop from './components/BackToTop';
+import ImageMorphGallery from './components/ImageMorphGallery';
+import SkylineScrollReveal from './components/SkylineScrollReveal';
 
 export default function App() {
   // Activate scroll reveal observer
@@ -40,6 +42,7 @@ export default function App() {
           <Intro />
           <SCOSection />
         </div>
+        <ImageMorphGallery />
         <WhySCO />
         <Location />
         <Amenities />
@@ -48,6 +51,7 @@ export default function App() {
         <CompetitiveAnalysis />
         <Connectivity />
         <Neighbourhood />
+        <SkylineScrollReveal />
         <Businesses />
         <NewAgeFeatures />
         <WealthCreation />
