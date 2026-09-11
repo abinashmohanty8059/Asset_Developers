@@ -10,7 +10,9 @@
 
 #hero .bg {
   position: absolute;
-  inset: -6% 0 0 0;
+  /* Top overscan must comfortably clear the parallax's max shift (12vh) so
+     the translateY in Hero.jsx never reveals a gap above the image. */
+  inset: -16% 0 0 0;
   overflow: hidden;
   will-change: transform;
 }
@@ -73,6 +75,12 @@
   z-index: 2;
   padding-top: 120px;
   padding-bottom: 60px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  #hero .content {
+    will-change: transform, opacity;
+  }
 }
 
 #hero .kicker {

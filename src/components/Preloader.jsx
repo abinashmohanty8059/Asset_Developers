@@ -34,7 +34,7 @@ export default function Preloader() {
   return (
     <div className={`preloader ${done ? 'is-done' : ''}`} role="status" aria-label="Loading">
       <div className="preloader-inner">
-        <img src="/images/logo-clean.jpg" alt="Asset Developers" className="preloader-logo" />
+        <img src="/images/asset-developers-logo.png" alt="Asset Developers" className="preloader-logo" />
         <div className="preloader-line">
           <span />
         </div>

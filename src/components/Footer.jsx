@@ -6,9 +6,9 @@ export default function Footer() {
       <div className="wrap">
         <div className="brand">
           <img
-            src="/images/logo-clean.jpg"
+            src="/images/asset-developers-logo.png"
             alt="Asset Developers"
-            style={{ height: '20px', background: '#fff', padding: '3px 6px', borderRadius: '2px' }}
+            style={{ height: '20px' }}
             loading="lazy"
           />
         </div>

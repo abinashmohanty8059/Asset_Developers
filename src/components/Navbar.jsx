@@ -52,11 +52,7 @@ export default function Navbar() {
       <nav id="nav" className={scrolled ? 'scrolled' : ''}>
         <div className="brand">
           <a href="#hero" aria-label="Home">
-            <img
-              src="/images/logo-clean.jpg"
-              alt="Asset Developers"
-              style={{ background: '#fff', padding: '4px 8px', borderRadius: '2px' }}
-            />
+            <img src="/images/asset-developers-logo.png" alt="Asset Developers" />
           </a>
         </div>
         <ul>

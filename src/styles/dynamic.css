@@ -32,9 +32,6 @@
 .preloader-logo {
   height: 34px;
   width: auto;
-  background: #fff;
-  padding: 6px 12px;
-  border-radius: 2px;
   animation: preloaderFade 1.6s ease-in-out infinite;
 }
 
