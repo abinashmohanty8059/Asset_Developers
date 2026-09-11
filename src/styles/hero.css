@@ -20,7 +20,7 @@
 #hero .bg-image {
   position: absolute;
   inset: 0;
-  background: url('/images/hero-skyline-sunset.jpg') center right / cover no-repeat;
+  background: url('/images/building-elevation-1.jpg') center right / cover no-repeat;
   opacity: 0.9;
   transform-origin: 70% 40%;
 }
