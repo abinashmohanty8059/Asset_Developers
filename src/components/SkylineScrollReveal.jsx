@@ -10,17 +10,17 @@ const FRAMES = [
     caption: 'Commuters enter off a 150 m-wide Dwarka Expressway.',
   },
   {
-    src: '/images/skyline-dusk-blue.jpg',
+    src: '/images/building-elevation-2.jpg',
     time: 'Afternoon',
     caption: 'Retail footfall builds along the SCO high street.',
   },
   {
-    src: '/images/skyline-dusk-2.jpg',
+    src: '/images/lifestyle-fine-dining.jpg',
     time: 'Evening',
     caption: 'Offices wind down as cafés and F&B pick up.',
   },
   {
-    src: '/images/hero-skyline-night.jpg',
+    src: '/images/spr-interchange.jpg',
     time: 'Night',
     caption: '100% power backup keeps the address always on.',
   },
