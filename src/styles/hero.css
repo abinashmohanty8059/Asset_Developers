@@ -63,7 +63,7 @@
   position: absolute;
   inset: 0;
   background: linear-gradient(
-    90deg,
+    270deg,
     var(--navy-deep) 5%,
     rgba(10, 22, 38, 0.75) 42%,
     rgba(10, 22, 38, 0.15) 75%

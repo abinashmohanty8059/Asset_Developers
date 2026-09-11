@@ -1,6 +1,9 @@
 import React from 'react';
 import { connectivityCards } from '../data/websiteData';
 
+// Doubled so the horizontal auto-scroll can loop seamlessly at -50%.
+const GALLERY_CARDS = [...connectivityCards, ...connectivityCards];
+
 export default function Connectivity() {
   return (
     <section id="connectivity">
@@ -11,12 +14,14 @@ export default function Connectivity() {
           </div>
           <h2>Everything Gurugram matters for, minutes away</h2>
         </div>
-        <div className="conn-grid">
-          {connectivityCards.map((card, idx) => (
+      </div>
+      <div className="conn-gallery reveal">
+        <div className="conn-track">
+          {GALLERY_CARDS.map((card, idx) => (
             <div
-              className="conn-card reveal"
+              className="conn-card"
               key={idx}
-              style={{ transitionDelay: `${(idx % 3) * 0.1}s` }}
+              aria-hidden={idx >= connectivityCards.length ? 'true' : undefined}
             >
               <div className="img">
                 <img src={card.image} alt={card.alt} loading="lazy" />
