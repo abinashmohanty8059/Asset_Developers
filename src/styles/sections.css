@@ -345,25 +345,24 @@
 /* ---------- Amenities ---------- */
 #amenities {
   position: relative;
-  color: #f2f0ea;
-  background: var(--navy-deep);
+  color: var(--ink);
+  background: var(--cream);
+  border-top: 1px solid rgba(201, 162, 75, 0.28);
+  border-bottom: 1px solid rgba(201, 162, 75, 0.28);
+  overflow: hidden;
 }
 
-#amenities .bg {
+/* Soft gold wash in the top-right corner keeps the flat cream from reading dead. */
+#amenities::before {
+  content: '';
   position: absolute;
-  inset: 0;
-  background: url('/images/skyline-dusk-2.jpg') center/cover no-repeat;
-}
-
-#amenities .overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(10, 16, 26, 0.88) 0%,
-    rgba(10, 16, 26, 0.62) 45%,
-    rgba(10, 16, 26, 0.9) 100%
-  );
+  top: -220px;
+  right: -160px;
+  width: 620px;
+  height: 620px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(201, 162, 75, 0.14), transparent 68%);
+  pointer-events: none;
 }
 
 #amenities .inner {
@@ -372,31 +371,60 @@
 }
 
 #amenities h2 {
-  color: #faf8f3;
+  color: var(--navy-deep);
   font-size: clamp(28px, 3.6vw, 42px);
-  margin: 16px 0 40px;
+  margin: 16px 0 12px;
   max-width: 560px;
+}
+
+#amenities .lede {
+  color: var(--slate);
+  font-size: 15.5px;
+  line-height: 1.7;
+  max-width: 520px;
+  margin: 0 0 44px;
 }
 
 .amenity-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1px;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  gap: 18px;
 }
 
 .amenity-grid .a {
-  background: rgba(10, 22, 38, 0.55);
-  padding: 30px 22px;
-  min-height: 150px;
+  background: #fff;
+  border: 1px solid var(--line-light);
+  border-radius: 4px;
+  padding: 26px 22px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  box-shadow: 0 1px 2px rgba(20, 30, 50, 0.05);
+}
+
+.amenity-grid .a .icon {
+  width: 44px;
+  height: 44px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: rgba(201, 162, 75, 0.13);
+  color: var(--gold-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.amenity-grid .a .icon svg {
+  width: 21px;
+  height: 21px;
 }
 
 .amenity-grid .a p {
-  font-size: 14.5px;
+  font-size: 14.8px;
   line-height: 1.55;
-  color: #e5e8ef;
+  color: var(--ink);
   margin: 0;
+  font-weight: 500;
 }
 
 @media (max-width: 900px) {
