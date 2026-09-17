@@ -54,6 +54,7 @@ export default function Navbar() {
           <a href="#hero" aria-label="Home">
             <img src="/images/asset-developers-logo.png" alt="Asset Developers" />
           </a>
+          <img src="/images/aiwa-logo.png" alt="Aiwa Japan" />
         </div>
         <ul>
           {navLinks.map((link) => (

@@ -19,6 +19,12 @@ export default function Contact() {
           <a className="btn primary" href="tel:+919164001144">
             Call +91 91640 01144
           </a>
+          <a className="btn primary" href="tel:+918796204734">
+            Call +91 87962 04734
+          </a>
+          <a className="btn primary" href="tel:+918796204735">
+            Call +91 87962 04735
+          </a>
           <a className="btn ghost" href="#siteplan">
             View Site Plan
           </a>
